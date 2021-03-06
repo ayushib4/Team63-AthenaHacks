@@ -1,0 +1,20 @@
+{
+  "name": "Insert Name",
+  "description": "Insert Description",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "image location",
+    "32": "image location",
+    "48": "image location",
+    "128": "image location"
+  },
+  "background": {
+    "scripts": ["./background.js"]
+  },
+  "options_page": "./options.html",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["tabs", "https://www.google.com/*"]
+}
