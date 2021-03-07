@@ -5,6 +5,7 @@ document.addEventListener(
     checkPageButton.addEventListener(
       "click",
       function () {
+        "";
         chrome.tabs.getSelected(null, function (tab) {
           alert("Hello User! It is time to take an eye screen break!");
         });
@@ -20,6 +21,13 @@ setInterval(function () {
 }, 10000);
 //Create notifications every 20 minutes = 1200000 millisecons
 
-chrome.notifications.onClicked.addListener(function () {
-  chrome.tabs.create({ url: "break.html" });
-});
+chrome.notifications.create(
+  "name-for-notification" + Math.random(),
+  {
+    type: "basic",
+    iconUrl: "./icon.EyesCream - 32.png",
+    title: "This is a notification",
+    message: "hello there!",
+  },
+  function () {}
+);
