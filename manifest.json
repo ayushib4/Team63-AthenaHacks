@@ -1,19 +1,23 @@
 {
   "manifest_version": 2,
   "name": "Eyes Cream",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
   "description": "A reminder to rest your eyes during screen time",
   "version": "2.1",
-  "icons": {
-    "16": "./icons/EyesCream - 16.png",
-    "32": "./icons/EyesCream - 32.png",
-    "48": "./icons/EyesCream - 48.png",
-    "128": "./icons/EyesCream - 128.png"
-  },
 
-  "default_popup": "popup.html",
+  "browser_action": {
+    "default_icon": "icons/EyesCream - 128.png",
+    "default_title": "Disable the alarm"
+  },
 
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": false
   },
-  "permissions": ["tabs", "notifications"]
+
+  "permissions": ["alarms", "notifications"],
+  "incognito": "spanning"
 }
